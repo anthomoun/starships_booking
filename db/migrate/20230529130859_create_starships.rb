@@ -10,7 +10,7 @@ class CreateStarships < ActiveRecord::Migration[7.0]
       t.boolean :booked, default: false
       t.float :price
       t.text :description
-      t.references :user_id, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
