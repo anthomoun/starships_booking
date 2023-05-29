@@ -7,7 +7,7 @@ class CreateStarships < ActiveRecord::Migration[7.0]
       t.float :latitude
       t.float :longitude
       t.string :address
-      t.boolean :booked
+      t.boolean :booked, default: false
       t.float :price
       t.text :description
       t.references :user_id, null: false, foreign_key: true
