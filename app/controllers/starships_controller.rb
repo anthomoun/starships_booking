@@ -44,7 +44,7 @@ class StarshipsController < ApplicationController
   end
 
   def starship_params
-    params.require(:starship).permit(:name, :type, :number_of_persons, :address, :price, :description, :banner_url)
+    params.require(:starship).permit(:name, :type, :number_of_persons, :address, :price, :description, :image_url)
   end
 
 end

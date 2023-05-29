@@ -1,0 +1,9 @@
+<h1 style="color: grey">Dear Invader, choose your starship for your space journey 🚀 !</h1>
+  <div id="starships">
+    <% @starships.each do |starship| %>
+      <%= starship.name %>
+      <%= starship.description %>
+      <%= starship.image_url %>
+      <%= link_to "See this starship", starship %>
+    <% end %>
+  </div>
