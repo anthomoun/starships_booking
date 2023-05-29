@@ -1,2 +1,50 @@
 class StarshipsController < ApplicationController
+
+  before_action :set_starship, only: %i[ show edit update destroy ]
+
+
+  def index
+    @starships = Starship.all
+  end
+
+  def show
+  end
+
+  def new
+    @starship = Starship.new
+  end
+
+  def create
+    @starship = Starship.new(starship_params)
+    if @starship.save
+      redirect_to @starship, notice: "Your starship is ready to be rent 🚀!"
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    if @starship.update(starship_params)
+      redirect_to @starship, notice: "your starship was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @starship.destroy
+    redirect_to starships_url, notice: "your starship was successfully destroyed 💥"
+  end
+
+
+  private
+
+  def set_starship
+    @starship = Starship.find(params[:id])
+  end
+
+  def starship_params
+    params.require(:starship).permit(:name, :type, :number_of_persons, :address, :price, :description, :banner_url)
+  end
+
 end
