@@ -1,10 +1,9 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://static.actu.fr/uploads/2022/08/adobestock-376579240.jpeg');">
-  <%= image_tag('logo_starship_booking', class: 'logo-bordered' )%>
+<div class="wrapper" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://static.actu.fr/uploads/2022/08/adobestock-376579240.jpeg');">
   <div class="container">
-    <h1>Welcome to SpaceShips Renting</h1>
+    <h1>Welcome to SpaceShip Renting</h1>
     <h2>With Starship Booking go to <strong>SPACE</strong> within a <strong>clik!</strong>!</h2>
     <p>Change your life and see out of the box how it looks like</p>
-    <a class="btn btn-flat" href="#">View all our Spaceships</a>
-    <%=link_to 'View all', starships_path %>
+    <%# <a class="btn btn-flat" href="#">View all our Spaceships</a> %>
+    <%=link_to 'View all Spaceships', starships_path, class: "btn btn-gradient" %>
   </div>
 </div>
