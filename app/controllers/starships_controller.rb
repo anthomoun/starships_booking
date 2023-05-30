@@ -35,6 +35,10 @@ class StarshipsController < ApplicationController
     redirect_to starships_url, notice: "your starship was successfully destroyed 💥"
   end
 
+  def location
+    @starships = Starship.where("address like ?", params[:location])
+  end
+
   private
 
   def set_starship
