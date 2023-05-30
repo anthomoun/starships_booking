@@ -2,7 +2,9 @@
 <p>Owner: <%= @starship.user.first_name %></p>
 <%= cl_image_tag 'nice_spaceship_u6ph92' %>
 <h3><%= @starship.model %></h3>
-<p><%= @starship.description %> Currently located in <%= @starship.address %>. Can accomodate <%= @starship.number_of_persons %> passengers</p>
+<p><%= @starship.description %></p>
+<p>Currently located in <%= @starship.address %>.</p>
+<p>Can accomodate <%= @starship.number_of_persons %> passengers.</p>
 <h3>Billing info</h3>
 <p><%= @starship.price %> credits / week</p>
 <%= link_to 'Book flight', new_starship_booking_path(@starship) %>
