@@ -7,6 +7,7 @@ class StarshipsController < ApplicationController
 
   def show
     @starship = Starship.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
