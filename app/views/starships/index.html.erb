@@ -1,10 +1,13 @@
 
-  <h1 style="color: grey">Dear Invader, choose your starship for your space journey 🚀 !</h1>
+  <h1>Dear Invader, choose your starship for your space journey 🚀 !</h1>
   <div class="container d-flex" id="starships">
   <div class="row">
     <% @starships.each do |starship| %>
 
       <div class="card-product col-3 mb-3 mt-3">
+      <div class="image">
+
+      </div>
         <div class="card-body ">
           <%= link_to starship.name, starship_path(starship) %>
           <p class="card-text"><%= starship.description%></p>
@@ -12,6 +15,4 @@
       </div>
         <% end %>
       </div>
-
-
   </div>
