@@ -1,3 +1,4 @@
 <h2><%= @starship.name %>, <%= %></h2>
 <p>Owned by: <%= @starship.user.first_name %></p>
-<p></p>
+<p><%= @starship.description %> Currently located in <%= @starship.address %>. Can accomodate <%= @starship.number_of_persons %> passengers</p>
+<%= cl_image_tag 'nice_spaceship_u6ph92' %>
