@@ -17,8 +17,9 @@ class StarshipsController < ApplicationController
 
   def create
     @starship = Starship.new(starship_params)
+    @starship.user = User.all.sample # PROVISOIRE
     if @starship.save
-      redirect_to @starship, notice: "Your starship is ready to be rent 🚀!"
+      redirect_to starship_path(@starship), notice: "Your starship is ready to be rent 🚀!"
     else
       render :new, status: :unprocessable_entity
     end
@@ -26,7 +27,7 @@ class StarshipsController < ApplicationController
 
   def update
     if @starship.update(starship_params)
-      redirect_to @starship, notice: "your starship was successfully updated."
+      redirect_to starship_path(@starship), notice: "your starship was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -48,6 +49,6 @@ class StarshipsController < ApplicationController
   end
 
   def starship_params
-    params.require(:starship).permit(:name, :type, :number_of_persons, :address, :price, :description, :image_url)
+    params.require(:starship).permit(:name, :model, :number_of_persons, :address, :price, :description, photos: [])
   end
 end
