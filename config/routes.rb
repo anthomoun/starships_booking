@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   # root to: "pages#home"
   root to: "starships#index"
-
-
-
   resources :starships do
     resources :bookings, only: [ :new, :create ]
+    collection do
+      get :location
+    end
   end
 
   resources :bookings, only: [ :show ]
