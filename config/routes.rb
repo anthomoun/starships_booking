@@ -3,8 +3,6 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # root to: "starships#index"
 
-
-
   resources :starships do
     resources :bookings, only: [ :new, :create ]
     collection do
