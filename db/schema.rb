@@ -64,11 +64,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_29_151008) do
   end
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
   add_foreign_key "bookings", "starships"
   add_foreign_key "bookings", "users"
 
+>>>>>>> master
+=======
+  add_foreign_key "bookings", "starships"
+  add_foreign_key "bookings", "users"
 >>>>>>> master
   add_foreign_key "starships", "users"
 end
