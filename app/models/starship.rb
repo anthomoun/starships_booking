@@ -4,4 +4,10 @@ class Starship < ApplicationRecord
   # validates :name, :number_of_persons, :address, :price, :description, presence: true
   validates :name,  presence: true
 
+  def unavailable_dates
+    bookings.pluck(:start_date, :end_date).map do |range|
+      { from: range[0], to: range[1] }
+    end
+  end
+
 end
