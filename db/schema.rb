@@ -11,12 +11,16 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema[7.0].define(version: 2023_05_29_130859) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
 =======
 ActiveRecord::Schema[7.0].define(version: 2023_05_29_151008) do
+=======
+ActiveRecord::Schema[7.0].define(version: 2023_05_30_110538) do
+>>>>>>> master
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -35,7 +39,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_29_151008) do
 >>>>>>> master
   create_table "starships", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "model"
     t.integer "number_of_persons"
     t.float "latitude"
     t.float "longitude"
