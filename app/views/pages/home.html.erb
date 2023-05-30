@@ -1,2 +1,9 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="wrapper" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://static.actu.fr/uploads/2022/08/adobestock-376579240.jpeg');">
+  <div class="container">
+    <h1>Welcome to SpaceShip Renting</h1>
+    <h2>With Starship Booking go to <strong>SPACE</strong> within a <strong>clik!</strong>!</h2>
+    <p>Change your life and see out of the box how it looks like</p>
+    <%# <a class="btn btn-flat" href="#">View all our Spaceships</a> %>
+    <%=link_to 'View all Spaceships', starships_path, class: "btn btn-gradient" %>
+  </div>
+</div>

@@ -1,1 +1,24 @@
 // Specific CSS for your home-page
+
+.wrapper {
+  background-size: cover;
+  background-position: center;
+  padding: 370px 0;
+  color: #B09754;
+}
+
+
+.btn-gradient {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #B09754;
+  transition: background 0.3s ease;
+  border: 1px solid #1E1D2C;
+}
+
+.btn-gradient:hover {
+  background: #1E1D2C;
+  color: white;
+}
