@@ -1,13 +1,12 @@
 class StarshipsController < ApplicationController
-
-  before_action :set_starship, only: %i[ show edit update destroy ]
-
+  before_action :set_starship, only: %i[show edit update destroy]
 
   def index
     @starships = Starship.all
   end
 
   def show
+    @starship = Starship.find(params[:id])
   end
 
   def new
@@ -36,7 +35,6 @@ class StarshipsController < ApplicationController
     redirect_to starships_url, notice: "your starship was successfully destroyed 💥"
   end
 
-
   private
 
   def set_starship
@@ -46,5 +44,4 @@ class StarshipsController < ApplicationController
   def starship_params
     params.require(:starship).permit(:name, :type, :number_of_persons, :address, :price, :description, :image_url)
   end
-
 end
