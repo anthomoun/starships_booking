@@ -33,5 +33,6 @@ starships.each do |starship|
                      number_of_persons: starship['passengers'],
                      address: Faker::Address.full_address,
                      price: starship['cost_in_credits'],
-                     description: "#{starship['starship_class']}, manufactured by #{starship['manufacturer']}" })
+                     description: "#{starship['starship_class']}, manufactured by #{starship['manufacturer']}",
+                     user: User.all.sample })
 end
