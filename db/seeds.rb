@@ -10,8 +10,8 @@ require 'open-uri'
 require 'json'
 
 # Purge database
-User.destroy_all
 Starship.destroy_all
+User.destroy_all
 
 # Create 5 fake users
 5.times do
