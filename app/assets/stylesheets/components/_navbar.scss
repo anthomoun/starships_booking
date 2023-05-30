@@ -37,11 +37,20 @@
 
 .navbar-right {
   background-color: white;
-  width: 110px;
+  width: 120px;
+  padding: 7px;
   border-radius: 45px;
+  border-color: #B09655 ;
   overflow: hidden;
   .avatar {
     width: 40px;
     border-radius: 50%;
+  }
+  i {
+    align-self: center;
+    font-size: 35px;
+  }
+  img {
+    margin-left: auto;
   }
 }
