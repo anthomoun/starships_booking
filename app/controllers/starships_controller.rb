@@ -9,6 +9,7 @@ class StarshipsController < ApplicationController
 
   def show
     @starship = Starship.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -35,7 +36,7 @@ class StarshipsController < ApplicationController
 
   def destroy
     @starship.destroy
-    redirect_to starships_url, notice: "your starship was successfully destroyed 💥"
+    redirect_to starships_path, notice: "your starship was successfully destroyed 💥"
   end
 
   def location
@@ -49,6 +50,7 @@ class StarshipsController < ApplicationController
   end
 
   def starship_params
-    params.require(:starship).permit(:name, :model, :number_of_persons, :address, :price, :description, photos: [])
+    # params.require(:starship).permit(:name, :starship_type, :number_of_persons, :address, :price, :description, photos: [])
+    params.require(:starship).permit(:name, :starship_type, :number_of_persons, :address, :price, :description)
   end
 end
