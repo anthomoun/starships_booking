@@ -5,9 +5,15 @@
     <% @starships.each do |starship| %>
 
       <div class="card-product col-3 mb-3 mt-3">
-      <div class="image">
-
-      </div>
+      <% if starship.photos.nil? %>
+        <div class="image">
+        </div>
+        <% else  %>
+        <% starship.photos.each do |photo| %>
+          <div class="dynamique-image" style="background: url('<%=cl_image_path photo.key %>')">
+        </div>
+        <% end %>
+      <% end %>
         <div class="card-body ">
           <%= link_to starship.name, starship_path(starship) %>
           <p class="card-text"><%= starship.description%></p>
