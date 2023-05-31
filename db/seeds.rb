@@ -23,7 +23,7 @@ User.destroy_all
 end
 
 # Create a bunch of starships
-API_URL = 'https://swapi.dev/api/starships/?format=json'
+API_URL = 'https://swapi.dev/api/starships/?format=json'.freeze
 starships_serialized = URI.open(API_URL).read
 starships = JSON.parse(starships_serialized)['results']
 
