@@ -11,6 +11,4 @@ class Starship < ApplicationRecord
     end
   end
 
-  has_many_attached :photos
-  validates :name, :number_of_persons, :address, :price, :description, presence: true
 end

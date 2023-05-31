@@ -1,4 +1,3 @@
- <%# constante provisoire pour les photos des starships %>
 
  <div class="container">
   <h2><%= @starship.name %></h2>
@@ -7,14 +6,16 @@
     <div class='image'></div>
   <% else %>
     <% @starship.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag photos.first.key, height: 300, width: 400, crop: :fill %>
     <% end %>
   <% end %>
-  <h3><%= @starship.model %></h3>
+  <h3><%= @starship.starship_type %></h3>
   <p><%= @starship.description %></p>
   <p>Currently located in <%= @starship.address %>.</p>
   <p>Can accomodate <%= @starship.number_of_persons %> passengers.</p>
   <h3>Billing info</h3>
   <p><%= @starship.price %> credits / week</p>
+  <%= render 'bookings/form', starship: @starship, booking: @booking %>
   <%= link_to 'Book flight', new_starship_booking_path(@starship) %>
+  <%= link_to 'Remove ship', starship_path(@starship), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
 </div>
