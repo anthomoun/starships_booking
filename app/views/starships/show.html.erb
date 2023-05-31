@@ -3,7 +3,13 @@
  <div class="container">
   <h2><%= @starship.name %></h2>
   <p>Owner: <%= @starship.user.first_name %></p>
-  <%= cl_image_tag 'vaisseau_virgin_hjyr14' %>
+  <% if @starship.photos.nil? %>
+    <div class='image'></div>
+  <% else %>
+    <% @starship.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+  <% end %>
   <h3><%= @starship.model %></h3>
   <p><%= @starship.description %></p>
   <p>Currently located in <%= @starship.address %>.</p>
