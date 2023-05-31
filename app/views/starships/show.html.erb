@@ -12,7 +12,6 @@
   <p>Currently located in <%= @starship.address %>.</p>
   <p>Can accomodate <%= @starship.number_of_persons %> passengers.</p>
   <h3>Billing info</h3>
-  <p><%= @starship.price %> credits / week</p>
   <%= render 'bookings/form', starship: @starship, booking: @booking %>
   <% if @starship.user == current_user %>
     <%= link_to 'Edit ship info', edit_starship_path(@starship) %>
