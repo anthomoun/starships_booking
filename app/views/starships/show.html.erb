@@ -14,6 +14,5 @@
   <h3>Billing info</h3>
   <p><%= @starship.price %> credits / week</p>
   <%= render 'bookings/form', starship: @starship, booking: @booking %>
-  <%= link_to 'Book flight', new_starship_booking_path(@starship) %>
   <%= link_to 'Remove ship', starship_path(@starship), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
 </div>
