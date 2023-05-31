@@ -1,7 +1,9 @@
 
 <div class="container show-card">
-  <h2><%= @starship.name %></h2>
-  <p>Owner: <%= @starship.user.first_name %></p>
+  <div class="ship-name-owner">
+    <h2><%= @starship.name %></h2>
+    <p>Owner: <%= @starship.user.first_name %></p>
+  </div>
   <% if @starship.photos.nil? %>
     <div class='image'></div>
   <% else %>

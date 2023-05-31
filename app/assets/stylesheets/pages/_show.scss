@@ -5,3 +5,13 @@ body {
 .show-card {
   background: radial-gradient(closest-side, #86694c, #514941);
 }
+
+.ship-name-owner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ship-name-owner * {
+  margin: 0;
+}
