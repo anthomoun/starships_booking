@@ -34,7 +34,7 @@ class StarshipsController < ApplicationController
 
   def destroy
     @starship.destroy
-    redirect_to starships_url, notice: "your starship was successfully destroyed 💥"
+    redirect_to starships_path, notice: "your starship was successfully destroyed 💥"
   end
 
   def location
