@@ -42,7 +42,7 @@ PHOTOS_URL = ["http://whatsgame.ru/image/o/pb/20b6yzvcqhca6ezo.jpg",
 starships.each do |starship|
   # ONCE SESSIONS ARE IMPLEMENTED, FIX OWNER DESIGNATION
   starship = Starship.create!({ name: starship['name'],
-                                model: starship['model'],
+                                starship_type: starship['model'],
                                 number_of_persons: starship['passengers'],
                                 address: Faker::Address.full_address,
                                 price: starship['cost_in_credits'],
