@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to starship_path(@starship), notice: "Booked Successfully!"
     else
-      puts @booking.errors.full_messages
+
       # render 'starships/show', starship: @starship
     end
   end
