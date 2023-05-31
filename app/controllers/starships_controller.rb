@@ -1,6 +1,6 @@
 class StarshipsController < ApplicationController
   before_action :set_starship, only: %i[show edit update destroy]
-   
+
 
 
   def index
@@ -18,7 +18,7 @@ class StarshipsController < ApplicationController
 
   def create
     @starship = Starship.new(starship_params)
-    @starship.user = User.all.sample # PROVISOIRE
+    @starship.user = current_user
     if @starship.save
       redirect_to starship_path(@starship), notice: "Your starship is ready to be rent 🚀!"
     else
