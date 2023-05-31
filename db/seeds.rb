@@ -29,7 +29,7 @@ starships = JSON.parse(starships_serialized)['results']
 
 starships.each do |starship|
   Starship.create!({ name: starship['name'],
-                     model: starship['model'],
+                    starship_type: starship['model'],
                      number_of_persons: starship['passengers'],
                      address: Faker::Address.full_address,
                      price: starship['cost_in_credits'],

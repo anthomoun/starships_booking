@@ -56,7 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_30_123745) do
 
   create_table "starships", force: :cascade do |t|
     t.string "name"
-    t.string "model"
+    t.string "starship_type"
     t.integer "number_of_persons"
     t.float "latitude"
     t.float "longitude"
