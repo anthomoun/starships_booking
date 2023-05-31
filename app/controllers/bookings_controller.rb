@@ -5,17 +5,18 @@ class BookingsController < ApplicationController
   end
 
   def create
-
-    @booking = Booking.find(params[:booking_id])
+    @starship = Starship.find(params[:starship_id])
     @booking = Booking.new(booking_params)
     @booking.starship = @starship
     @booking.user = current_user
     if @booking.save
-      redirect_to starship_path(@starship), notice: "booking have been created succefully!"
+      redirect_to starship_path(@starship), notice: "Booked Successfully!"
     else
-      render 'bookings/show'
+      puts @booking.errors.full_messages
+      # render 'starships/show', starship: @starship
     end
   end
+
 
   private
 

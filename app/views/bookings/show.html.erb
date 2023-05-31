@@ -1,12 +1,12 @@
 <div class="container-listing">
   <br>
   <h2><strong>Congratulations, your booking has been confirmed!</strong></h2><br>
-  <h3><strong>Your trip details</strong></h3><br>
+  <h3><strong>Your booking details details</strong></h3><br>
 
   <strong>Start Date: <%= @booking.start_date %></strong> | <strong>End Date: <%= @booking.end_date %></strong>
-
-  <h4><strong><%= @booking.startship.name%></strong></h4>
-  <p>Location: <%= @booking.startship.address %></p>
-  <p><%= @booking.startship.description %></p>
+  <h4><strong><%= @booking.starship.name%></strong></h4>
+  <p>Location: <%= @booking.starship.address %></p>
+  <p>Total Price: <%= @total_price %></p>
+  <p><%= @booking.starship.description %></p>
 
 </div>

@@ -1,21 +1,14 @@
 <div class="confirmation-box col-md-4">
+  <div class="confirmation-box col-md-4">
   <div class="listing-price">
     <div class="form-group">
       <h4>$<%= @starship.price %></h4>
       <p>per day </p><br>
 
       <%= simple_form_for([@starship, @booking]) do |f| %>
-       <%= f.input :start_date, as: :string,input_html: { data: { controller: "datepicker" } } %>
-      <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
-      <%= f.submit "book", class: "btn btn-primary btn-lg btn-block btn-booking" %>
-
-          <%#= f.select :number_of_persons, options_for_select([["Please select one", ""], 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) %>
-
-        <%# <h5>Subtotal: <strong>$<%= @starship.price %></strong></h5><br>
-
-
-        <br><br>
-
+        <%= f.input :start_date, as: :string, input_html: { id: "booking_start_date", data: { controller: "datepicker" } } %>
+        <%= f.input :end_date, as: :string, input_html: { id: "booking_end_date", data: { controller: "datepicker" } } %>
+        <%= f.submit "book", class: "btn btn-primary btn-lg btn-block btn-booking" %>
       <% end %>
     </div>
   </div>

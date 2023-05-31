@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
-  # root to: "starships#index"
+  # root to: "pages#home"
+  root to: "starships#index"
 
 
 
   resources :starships do
-    resources :bookings, only: [ :new, :create ]
+    resources :bookings, only: [ :new, :create, :show ]
     collection do
       get :location
     end
