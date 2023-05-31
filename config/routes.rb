@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # root to: "starships#index"
 
   resources :starships do
-    resources :bookings, only: [ :new, :create, :show ]
+    resources :bookings, only: [ :new, :create]
     collection do
       get :location
     end

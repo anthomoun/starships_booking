@@ -32,6 +32,9 @@ class StarshipsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
     if @starship.update(starship_params)
       redirect_to starship_path(@starship), notice: "your starship was successfully updated."

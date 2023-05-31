@@ -6,6 +6,10 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <!-- CSS -->
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <%= javascript_importmap_tags %>
@@ -35,11 +39,12 @@
 
 
       </div>
+   <%= render "shared/navbar" %>
+      <%= yield %>
     </div>
-    <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= render "shared/navbar" %>
+
     <%= render "shared/flashes" %>
   </body>
 </html>
