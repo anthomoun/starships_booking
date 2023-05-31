@@ -1,11 +1,13 @@
-<h2>Add a new starship</h2>
-<%= simple_form_for(@starship) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :model %>
-  <%= f.input :number_of_persons %>
-  <%= f.input :address %>
-  <%= f.input :price %>
-  <%= f.input :description %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit 'Add my ship!' %>
-<% end %>
+<div class="container">
+  <h2>Add a new starship</h2>
+  <%= simple_form_for(@starship) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :model %>
+    <%= f.input :number_of_persons %>
+    <%= f.input :address %>
+    <%= f.input :price %>
+    <%= f.input :description %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit 'Add my ship!', class: "btn btn-primary" %>
+  <% end %>
+</div>
