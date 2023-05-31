@@ -24,7 +24,7 @@ class StarshipsController < ApplicationController
 
   def create
     @starship = Starship.new(starship_params)
-    @starship.user = User.all.sample # PROVISOIRE
+    @starship.user = current_user
     if @starship.save
       redirect_to starship_path(@starship), notice: "Your starship is ready to be rent 🚀!"
     else
