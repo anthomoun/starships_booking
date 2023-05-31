@@ -5,9 +5,7 @@
   <% if @starship.photos.nil? %>
     <div class='image'></div>
   <% else %>
-    <% @starship.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
+      <%= cl_image_tag @starship.photos.first.key, height: 300, width: 400, crop: :fill %>
   <% end %>
   <h3><%= @starship.starship_type %></h3>
   <p><%= @starship.description %></p>
