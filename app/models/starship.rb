@@ -1,7 +1,7 @@
 class Starship < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
-  # has_many_attached :photos
+  has_many_attached :photos
   validates :name, :number_of_persons, :address, :price, :description, presence: true
  
 
@@ -11,6 +11,4 @@ class Starship < ApplicationRecord
     end
   end
 
-  has_many_attached :photos
-  validates :name, :number_of_persons, :address, :price, :description, presence: true
 end
