@@ -26,7 +26,7 @@ end
 API_URL = 'https://swapi.dev/api/starships/?format=json'.freeze
 starships_serialized = URI.open(API_URL).read
 starships = JSON.parse(starships_serialized)['results']
-
+ADDRESSES = %w[paris london madrid mexico marseille]
 # Selection of photos to attach to attach to ships
 PHOTOS_URL = ["http://whatsgame.ru/image/o/pb/20b6yzvcqhca6ezo.jpg",
               "https://megagames.com/sites/default/files/game-content-images/x3apswm106f.jpg",
@@ -44,7 +44,7 @@ starships.each do |starship|
   starship = Starship.create!({ name: starship['name'],
                                 starship_type: starship['model'],
                                 number_of_persons: starship['passengers'],
-                                address: Faker::Address.full_address,
+                                address: ADDRESSES.sample,
                                 price: starship['cost_in_credits'],
                                 description: "#{starship['starship_class']}, manufactured by #{starship['manufacturer']}",
                                 user: User.all.sample })
