@@ -2,6 +2,7 @@ body {
   background-color: $background;
   height: 100vh;
   overflow: scroll;
+  padding-bottom: 20px;
 }
 
 .show-card {
@@ -25,4 +26,35 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+.ship-name-owner p {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.description-group {
+  font-size: 20px;
+}
+
+.description-group h3 {
+  font-weight: bold;
+}
+
+.booking-form-group h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.booking-form-group h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.booking-form-group p, .booking-form-group label {
+  font-size: 20px;
 }
