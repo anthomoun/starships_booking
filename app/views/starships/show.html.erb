@@ -23,5 +23,6 @@
   <% if @starship.user == current_user %>
     <%= link_to 'Edit ship info', edit_starship_path(@starship), class: "btn, btn-primary" %>
     <%= link_to 'Remove ship', starship_path(@starship), class: "btn, btn-primary", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+
   <% end %>
 </div>

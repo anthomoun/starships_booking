@@ -5,14 +5,18 @@ Rails.application.routes.draw do
   # root to: "starships#index"
 
   resources :starships do
-    resources :bookings, only: [ :new, :create]
+    resources :bookings
     collection do
       get :location
     end
   end
 
-  resources :bookings, only: [ :show ]
+  # resources :bookings, only: [ :show, :update, :edit, :destroy ]
+
+
   get 'dashboard', to: 'dashboard#index'
+  patch 'dashboard/bookings/:id/update_status', to: 'dashboard#update_booking_status', as: 'update_booking_status'
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

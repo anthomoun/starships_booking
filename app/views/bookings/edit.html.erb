@@ -1,0 +1,18 @@
+<div class="confirmation-box">
+  <div class="listing-price">
+    <div class="form-group">
+      <h4>$<%= @starship.price %></h4>
+      <p>per day </p><br>
+
+      <%= simple_form_for([@starship, @booking]) do |f| %>
+        <%= f.input :start_date, as: :string, input_html: { id: "booking_start_date", data: { controller: "datepicker" } } %>
+        <%= f.input :end_date, as: :string, input_html: { id: "booking_end_date", data: { controller: "datepicker" } } %>
+        <% if current_user.host? %>
+          <%= f.label :status %>
+          <%= f.select :status, options_for_select(['accepted', 'refused']), prompt: 'Select Status' %>
+        <% end %>
+        <%= f.submit "Update Booking", class: "btn btn-primary btn-lg btn-block btn-booking" %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,9 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :starship
+  scope :pending, -> { where(status: 'pending') }
+  attribute :status, :string, default: 'pending'
+
 
   validates :start_date, :end_date, presence: true
   validate :end_date_after_start_date
