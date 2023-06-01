@@ -2,19 +2,19 @@
         <div class="container-fluid">
           <%= link_to root_path, class: "navbar-brand" do %>
             <%= image_tag "logo.png", alt:"Starship logo" %>
-
           <% end %>
-          <%= form_with url: location_starships_path, method: :get, class:"search-form-control form-group" do %>
-            <%= text_field_tag :query,
-              params[:query],
-              class: "form-control string required",
-              placeholder: "Find a starship"
-            %>
-            <%= submit_tag "search", class: "btn btn-flat"%>
-              <%# <i class="fas fa-search"></i> %>
-            <%# end %>
+          <% if @search %>
+            <%= form_with url: location_starships_path, method: :get, class:"search-form-control form-group" do %>
+              <%= text_field_tag :query,
+                params[:query],
+                class: "form-control string required",
+                placeholder: "Find a starship"
+              %>
+              <%= submit_tag "search", class: "btn btn-flat"%>
+                <%# <i class="fas fa-search"></i> %>
+              <%# end %>
+            <% end %>
           <% end %>
-
           <div class="account-links">
             <%#= link_to "Home", root_path, class:"navbar-item, btn btn-warning"%>
             <% if user_signed_in? %>
