@@ -77,6 +77,7 @@
 
     <div class="tab-pane fade" id="Accepted_booking-tab-pane" role="tabpanel" aria-labelledby="Accepted_booking-tab" tabindex="0">
       <h2 id = "Accepted_booking" >Accepted Bookings</h2>
+      <% if @accepted_bookings %>
       <% @accepted_bookings.each do |booking| %>
         <div>
           <p>Booking ID: <%= booking.id %></p>
@@ -84,11 +85,13 @@
           <p>Starship Booked: <%= booking.starship.booked %></p>
         </div>
       <% end %>
+      <% end %>
     </div>
 
 
     <div class="tab-pane fade" id="Refused_booking-tab-pane" role="tabpanel" aria-labelledby="Refused_booking-tab" tabindex="0">
       <h2 id = "Refused_booking">Refused Bookings</h2>
+      <% if @refused_bookings %>
       <% @refused_bookings.each do |booking| %>
         <div>
           <p>Booking ID: <%= booking.id %></p>
@@ -96,17 +99,20 @@
           <p>Starship Booked: <%= booking.starship.booked %></p>
         </div>
       <% end %>
+      <% end %>
     </div>
 
   <div class="tab-pane fade" id="Pending_booking-tab-pane" role="tabpanel" aria-labelledby="Pending_booking-tab" tabindex="0">
     <h2 id = "Pending_booking">Pending Bookings</h2>
      <% if current_user.guest? %>
-      <% @pending_bookings.each do |booking| %>
-        <div>
-          <p>Booking ID: <%= booking.id %></p>
-          <p>Status: <%= booking.status %></p>
-          <p>Starship Booked: <%= booking.starship.booked %></p>
-        </div>
+      <% if @pending_bookings %>
+        <% @pending_bookings.each do |booking| %>
+          <div>
+            <p>Booking ID: <%= booking.id %></p>
+            <p>Status: <%= booking.status %></p>
+            <p>Starship Booked: <%= booking.starship.booked %></p>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
   </div>
