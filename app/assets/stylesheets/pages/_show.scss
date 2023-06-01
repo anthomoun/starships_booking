@@ -5,10 +5,14 @@ body {
   padding-bottom: 20px;
 }
 
+img {
+  border-radius: 10px;
+}
+
 .show-card {
-  background: radial-gradient(closest-side, #86694c, $background);
+  // background: radial-gradient(closest-side, #86694c, $background);
   margin-top: 50px;
-  color: $intense-gold;
+  color: $not-quite-black;
 }
 
 .ship-name-owner {
