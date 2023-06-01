@@ -51,7 +51,11 @@ class StarshipsController < ApplicationController
   end
 
   def location
-    @starships = Starship.where("address like ?", params[:location])
+    if params[:query].present?
+      @starships = Starship.where("address ILIKE ?", "%#{params[:query]}%")
+    else
+      @starships = Starship.all
+    end
   end
 
   private

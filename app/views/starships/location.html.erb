@@ -1,10 +1,6 @@
 <h1>Dear Invader, choose your starship for your space journey 🚀 !</h1>
-<div class="container d-flex" id="starships">
+<div class="container" id="starships">
   <div class="row">
-  <div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     <% @starships.each do |starship| %>
       <div class="card-product col-3 mb-3 mt-3">
       <% if starship.photos.nil? %>
@@ -22,10 +18,5 @@
         </div>
       </div>
       <% end %>
-  </div>
-</div>
-<div class="container">
-  <div class="map-button fixed-bottom d-flex justify-content-center">
-    <button type="button" class="btn btn-dark">View Map</button>
   </div>
 </div>
