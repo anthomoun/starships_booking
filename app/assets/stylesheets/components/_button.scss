@@ -1,9 +1,29 @@
-.account-links a {
-  background-color: #63594F;
-  color: #DBC274;
+.btn-primary, .account-links a {
+  border: none;
   padding: 16px 32px;
   text-decoration: none;
   font-size: 20px;
   font-weight: bold;
   border-radius: 5px;
+}
+
+.account-links a {
+  background-color: #63594F;
+  color: #DBC274;
+}
+
+.account-links a:hover {
+  background-color: #DBC274;
+  color: #63594F;
+  transition: background-color 300ms, color 300ms;
+}
+
+.btn-primary {
+  background-color: #1E1D2C;
+  color: #B09655;
+}
+
+.btn-primary:hover {
+  background-color: #B09655;
+  color: #1E1D2C;
 }
