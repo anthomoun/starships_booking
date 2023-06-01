@@ -1,6 +1,7 @@
 body {
   background-color: $background;
   height: 100vh;
+  overflow: scroll;
 }
 
 .show-card {
