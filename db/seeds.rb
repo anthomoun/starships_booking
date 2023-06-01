@@ -71,10 +71,10 @@ starships.each do |starship|
                                 price: starship['cost_in_credits'],
                                 description: "#{starship['starship_class']}, manufactured by #{starship['manufacturer']}",
                                 user: User.all.sample })
-  starship.photos.attach(io: URI.open(PHOTOS_EXTERIOR.sample), filename: 'ship.jpg', content_type: 'image/jpg')
-  starship.photos.attach(io: URI.open(PHOTOS_INTERIOR.sample), filename: 'ship.jpg', content_type: 'image/jpg')
-  starship.photos.attach(io: URI.open(PHOTOS_INTERIOR.sample), filename: 'ship.jpg', content_type: 'image/jpg')
-  starship.photos.attach(io: URI.open(PHOTOS_INTERIOR.sample), filename: 'ship.jpg', content_type: 'image/jpg')
-  starship.photos.attach(io: URI.open(PHOTOS_BEDROOM.sample), filename: 'ship.jpg', content_type: 'image/jpg')
+  starship.photos.attach(io: URI.open(PHOTOS_EXTERIOR.sample), filename: 'ship')
+  starship.photos.attach(io: URI.open(PHOTOS_INTERIOR.sample), filename: 'ship')
+  starship.photos.attach(io: URI.open(PHOTOS_INTERIOR.sample), filename: 'ship')
+  starship.photos.attach(io: URI.open(PHOTOS_INTERIOR.sample), filename: 'ship')
+  starship.photos.attach(io: URI.open(PHOTOS_BEDROOM.sample), filename: 'ship')
 
 end
