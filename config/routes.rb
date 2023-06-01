@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'dashboard/index'
   devise_for :users
   root to: "pages#home"
   # root to: "starships#index"
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [ :show ]
+  get 'dashboard', to: 'dashboard#index'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
