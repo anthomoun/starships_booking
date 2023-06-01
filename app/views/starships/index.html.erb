@@ -13,7 +13,7 @@
             <div class="image"></div>
           <% else  %>
             <% starship.photos.each do |photo| %>
-              <div class="dynamique-image" style="background: url('<%=cl_image_path photo.key %>')"></div>
+              <div class="dynamique-image" style="background: url('<%=cl_image_path photo.key %>'); background-size: cover; background-position: center;"></div>
           <% end %>
         <% end %>
         <div class="card-body ">

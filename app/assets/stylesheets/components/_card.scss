@@ -1,23 +1,18 @@
 .card-product {
-
-  .image {
-  background-image: asset-url("battlestar_galactica_vaisseau.jpg");
-  background-size: cover;
-  height: 400px;
-  }
-
-  .dynamique-image {
-    height: 400px;
-    background-size: cover;
-  }
-  a {
-    font-family: inter;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-  }
-  .card-body {
-    background: #63594F;
-    padding:10px;
-  }
+  overflow: hidden;
+  border-radius: 30px;
+    .dynamique-image {
+      height: 300px;
+    }
+    a {
+      font-family: inter;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+    .card-body {
+      background: #63594F;
+      padding:7px;
+      height: 170px;
+    }
 }
