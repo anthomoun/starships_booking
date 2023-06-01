@@ -12,24 +12,24 @@ a {
 }
 
 .account-links a {
-  background-color: #63594F;
-  color: #DBC274;
+  background-color: $dark-gold;
+  color: $intense-gold;
 }
 
 .account-links a:hover {
-  background-color: #DBC274;
-  color: #63594F;
+  background-color: $intense-gold;
+  color: $dark-gold;
 
 }
 
 .btn-primary {
-  background-color: #1E1D2C;
-  color: #B09655;
+  background-color: $not-quite-black;
+  color: $pale-gold;
 }
 
 .btn-primary:hover {
-  background-color: #B09655;
-  color: #1E1D2C;
+  background-color: $pale-gold;
+  color: $not-quite-black;
 }
 
 .btn-primary:hover, .account-links a:hover {
