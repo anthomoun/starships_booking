@@ -1,22 +1,30 @@
 <h1>Dear Invader, choose your starship for your space journey 🚀 !</h1>
 <div class="container" id="starships">
   <div class="row">
-    <% @starships.each do |starship| %>
-        <div class="card-product col-3 mb-3 mt-3">
-        <%= link_to starship_path(starship) do %>
-          <% if starship.photos.nil? %>
-            <div class="image"></div>
-          <% else  %>
-            <% starship.photos.each do |photo| %>
-              <div class="dynamique-image" style="background: url('<%=cl_image_path photo.key %>')"></div>
+    <div class="col-md-8">
+      <% @starships.each do |starship| %>
+          <%= link_to starship_path(starship) do %>
+          <div class="card-product col-md-3 mb-3 mt-3">
+            <% if starship.photos.nil? %>
+              <div class="image"></div>
+            <% else  %>
+              <% starship.photos.each do |photo| %>
+                <div class="dynamique-image" style="background-image: url('<%=cl_image_path photo.key %>')"></div>
+              <% end %>
             <% end %>
-          <% end %>
-          <div class="card-body ">
-            <%= starship.name %>
-            <p class="card-text"><%= starship.description%></p>
+            <div class="card-body ">
+              <%= starship.name %>
+              <p class="card-text"><%= starship.description%></p>
+            </div>
+        <% end %>
           </div>
-        </div>
       <% end %>
-    <% end %>
+    </div>
+    <div class="col-md-4"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
   </div>
 </div>
