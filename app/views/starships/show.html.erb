@@ -7,14 +7,20 @@
   <% if @starship.photos.nil? %>
     <div class='image'></div>
   <% else %>
-      <%= cl_image_tag @starship.photos.first.key, height: 300, width: 400, crop: :fill %>
+    <%= cl_image_tag @starship.photos.first.key, height: 300, width: 400, crop: :fill %>
   <% end %>
-  <h3><%= @starship.starship_type %></h3>
-  <p><%= @starship.description %></p>
-  <p>Currently located in <%= @starship.address %>.</p>
-  <p>Can accomodate <%= @starship.number_of_persons %> passengers.</p>
-  <h3>Billing info</h3>
-  <%= render 'bookings/form', starship: @starship, booking: @booking %>
+  <div class="description-billing">
+    <div class="description-group">
+      <h3><%= @starship.starship_type %></h3>
+      <p><%= @starship.description %></p>
+      <p>Currently located in <%= @starship.address %>.</p>
+      <p>Can accomodate <%= @starship.number_of_persons %> passengers.</p>
+    </div>
+    <div class="booking-form-group">
+      <h3>Billing info</h3>
+      <%= render 'bookings/form', starship: @starship, booking: @booking %>
+    </div>
+  </div>
   <% if @starship.user == current_user %>
     <%= link_to 'Edit ship info', edit_starship_path(@starship) %>
     <%= link_to 'Remove ship', starship_path(@starship), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>

@@ -4,6 +4,7 @@ body {
 
 .show-card {
   background: radial-gradient(closest-side, #86694c, #514941);
+  margin-top: 15px;
 }
 
 .ship-name-owner {
@@ -14,4 +15,9 @@ body {
 
 .ship-name-owner * {
   margin: 0;
+}
+
+.description-billing {
+  display: flex;
+  justify-content: space-between;
 }
