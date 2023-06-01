@@ -1,5 +1,9 @@
+/* The source image for the avatar should be at least squarish. */
+
 .avatar {
   width: 40px;
+  height: 40px;
+  object-fit: cover;
   border-radius: 50%;
 }
 .avatar-large {
