@@ -2,21 +2,21 @@
 <div class="container" id="starships">
   <div class="row">
     <% @starships.each do |starship| %>
-      <div class="card-product col-3 mb-3 mt-3">
-      <% if starship.photos.nil? %>
-        <div class="image">
+        <div class="card-product col-3 mb-3 mt-3">
+        <%= link_to starship_path(starship) do %>
+          <% if starship.photos.nil? %>
+            <div class="image"></div>
+          <% else  %>
+            <% starship.photos.each do |photo| %>
+              <div class="dynamique-image" style="background: url('<%=cl_image_path photo.key %>')"></div>
+            <% end %>
+          <% end %>
+          <div class="card-body ">
+            <%= starship.name %>
+            <p class="card-text"><%= starship.description%></p>
+          </div>
         </div>
-        <% else  %>
-        <% starship.photos.each do |photo| %>
-          <div class="dynamique-image" style="background: url('<%=cl_image_path photo.key %>')">
-        </div>
-        <% end %>
       <% end %>
-        <div class="card-body ">
-          <%= link_to starship.name, starship_path(starship) %>
-          <p class="card-text"><%= starship.description%></p>
-        </div>
-      </div>
-      <% end %>
+    <% end %>
   </div>
 </div>
