@@ -1,35 +1,30 @@
-      <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-        <div class="container-fluid">
-          <%= link_to root_path, class: "navbar-brand" do %>
-            <%= image_tag "logo.png", alt:"Starship logo" %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "logo.png", alt:"Starship logo" %>
+    <% end %>
+    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+      <div class="search-form-control form-group">
+        <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+        <button name="button" type="submit" class="btn btn-flat">
+          <i class="fas fa-search"></i>
+        </button>
 
-          <% end %>
-            <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-            <div class="search-form-control form-group">
-              <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-              <button name="button" type="submit" class="btn btn-flat">
-                <i class="fas fa-search"></i>
-              </button>
-          </div>
-          <% end %>
-
-          <div class="account-links">
-            <%#= link_to "Home", root_path, class:"navbar-item, btn btn-warning"%>
-            <% if user_signed_in? %>
-
-            <a href="<%= edit_user_registration_path %>">Account</a>
-            <%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-            <%= link_to 'Add a ship!', new_starship_path %>
-
-              <%# <i class="fa-solid fa-bars"></i> %>
-              <%= image_tag "https://www.francetvinfo.fr/pictures/GeUFO9wnKyjlmZ9H6mvwofEH9Rk/752x423/2017/08/16/phpB5XwH0_1.jpg", class: "avatar", alt: "avatar" %>
-
-          <% else %>
-
-          <%= link_to "Sign In", new_user_session_path, class:"navbar-item, btn btn-warning" %>
-          <%= link_to "Sign up", new_user_registration_path, class:"navbar-item, btn btn-warning"%>
-
-          <% end %>
-        </div>
-        </div>
       </div>
+    <% end %>
+    <div class="account-links">
+      <%#= link_to "Home", root_path, class:"navbar-item, btn btn-warning"%>
+      <% if user_signed_in? %>
+       <%= link_to "My dashbord", dashboard_index_path %>
+        <a href="<%= edit_user_registration_path %>">Account</a>
+        <%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+        <%= link_to 'Add a ship!', new_starship_path %>
+        <%# <i class="fa-solid fa-bars"></i> %>
+        <%= image_tag "https://www.francetvinfo.fr/pictures/GeUFO9wnKyjlmZ9H6mvwofEH9Rk/752x423/2017/08/16/phpB5XwH0_1.jpg", class: "avatar", alt: "avatar" %>
+      <% else %>
+        <%= link_to "Sign In", new_user_session_path, class:"navbar-item, btn btn-warning" %>
+        <%= link_to "Sign up", new_user_registration_path, class:"navbar-item, btn btn-warning"%>
+      <% end %>
+    </div>
+  </div>
+</div>

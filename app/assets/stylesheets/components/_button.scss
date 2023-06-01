@@ -1,11 +1,37 @@
-.account-links a {
-  background-color: #63594F;
-  color: #DBC274;
-  padding: 16px 32px;
-  width: 20px;
+a {
+  display: inline-block;
+}
+
+.btn-primary, .account-links a {
+  border: none;
+  padding: 8px 16px;
   text-decoration: none;
   font-size: 20px;
   font-weight: bold;
   border-radius: 5px;
 }
 
+.account-links a {
+  background-color: $dark-gold;
+  color: $intense-gold;
+}
+
+.account-links a:hover {
+  background-color: $intense-gold;
+  color: $dark-gold;
+
+}
+
+.btn-primary {
+  background-color: $not-quite-black;
+  color: $pale-gold;
+}
+
+.btn-primary:hover {
+  background-color: $pale-gold;
+  color: $not-quite-black;
+}
+
+.btn-primary:hover, .account-links a:hover {
+  transition: background-color 300ms, color 300ms;
+}

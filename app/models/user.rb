@@ -6,4 +6,15 @@ class User < ApplicationRecord
 
   has_many :starships, dependent: :destroy
   has_many :bookings, dependent: :destroy
+
+
+  def guest?
+    starships.empty?
+  end
+
+  def host?
+    starships.any?
+  end
+
+
 end

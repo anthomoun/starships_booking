@@ -1,0 +1,28 @@
+body {
+  background-color: $background;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.show-card {
+  background: radial-gradient(closest-side, #86694c, $background);
+  margin-top: 50px;
+  color: $intense-gold;
+}
+
+.ship-name-owner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.ship-name-owner * {
+  margin: 0;
+}
+
+.description-billing {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
