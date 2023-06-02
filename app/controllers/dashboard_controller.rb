@@ -10,7 +10,7 @@ class DashboardController < ApplicationController
   @requests = []
     @starships.each do  |s|
         s.bookings.each do |b|
-          @requests << b if b.status == 'pending'
+          @requests << b
         end
       end
     end
