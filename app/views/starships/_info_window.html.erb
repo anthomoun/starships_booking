@@ -1,2 +1,10 @@
-<h2><%= starship.name %></h2>
-<p><%= starship.address %></p>
+<div class="container">
+    <%= link_to starship_path(starship) do %>
+  <%= cl_image_tag starship.photos.first.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+  <h4 class="mt-2"><%= starship.name %></h4>
+  <hr>
+  <p>Location: <%= starship.address %></p>
+  <hr>
+  <p>Description: <%= starship.description %></p>
+</div>
