@@ -1,14 +1,38 @@
 <div class="container">
-  <%= link_to 'Back', starships_path, class: 'btn btn-primary btn-back' %>
   <div class="show-card">
-    <div class="ship-name-owner">
-      <h2><%= @starship.name %></h2>
-      <p>Owner: <%= @starship.user.first_name %></p>
+    <div class="owner-plus-back">
+      <div class="ship-name-owner">
+        <h2><%= @starship.name %></h2>
+        <p>by <%= @starship.user.first_name %></p>
+      </div>
+      <div class="buttons-show">
+        <%= link_to 'Back', starships_path, class: 'btn btn-primary btn-back back-button' %>
+        <% if @starship.user == current_user %>
+          <%= link_to 'Edit ship info', edit_starship_path(@starship), class: "btn, btn-primary back-button" %>
+          <%= link_to 'Remove ship', starship_path(@starship), class: "btn, btn-primary back-button", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>
     </div>
     <% if @starship.photos.nil? %>
       <div class='image'></div>
     <% else %>
-      <%= cl_image_tag @starship.photos.first.key, height: 300, width: 400, crop: :fill %>
+      <div class="grid-show">
+      <div class="show-image-star">
+          <%= cl_image_tag @starship.photos.first.key, class: 'image-grid-ship' %>
+      </div>
+      <div class="show-image-star">
+          <%= cl_image_tag @starship.photos[1].key, class: 'image-grid-ship' %>
+      </div>
+      <div class="show-image-star">
+          <%= cl_image_tag @starship.photos[2].key, class: 'image-grid-ship' %>
+      </div>
+      <div class="show-image-star">
+          <%= cl_image_tag @starship.photos[3].key, class: 'image-grid-ship' %>
+      </div>
+      <div class="show-image-star">
+          <%= cl_image_tag @starship.photos[4].key, class: 'image-grid-ship' %>
+      </div>
+      </div>
     <% end %>
     <div class="description-and-billing">
       <div class="description-group">
@@ -36,9 +60,5 @@
     <div id="starship-map" data-controller="starship-map" data-starship-map-marker-value="<%= @marker.to_json %>" data-starship-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 
     </div>
-    <% if @starship.user == current_user %>
-      <%= link_to 'Edit ship info', edit_starship_path(@starship), class: "btn, btn-primary" %>
-      <%= link_to 'Remove ship', starship_path(@starship), class: "btn, btn-primary", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
-    <% end %>
   </div>
 </div>
