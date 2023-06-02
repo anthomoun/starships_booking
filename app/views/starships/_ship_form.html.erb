@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center text-style">
   <div style= "width: 500px">
     <%= simple_form_for(@starship) do |f| %>
       <%= f.input :name, input_html: { class: 'rounded-input' } %>
@@ -7,7 +7,8 @@
       <%= f.input :address, input_html: { class: 'rounded-input' } %>
       <%= f.input :price, input_html: { class: 'rounded-input' } %>
       <%= f.input :description, input_html: { class: 'rounded-input' } %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true} %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true}, label: false,
+                  wrapper_html: { class: 'mt-5' } %>
         <% if action_name == 'edit' %>
           <p>Add all your photos at once here! Photos which are not reselected will be deleted.</p>
         <% end %>
