@@ -42,8 +42,9 @@
                   <% @requests.each do |booking| %>
                     <div class="grid my-1 spaceships">
                       <%= cl_image_tag booking.starship.photos.first.key, height: 220, width: 320, crop: :fill %>
-                      <p><%= booking.starship.name %></p>
-                      <p>Status: <%= booking.status %></p>
+                      <p>You accepted the booking on <%= booking.starship.name %></p>
+                      <hr>
+                      <p>Status:</p><p class="<%if booking.status =='accepted'%>green-btn<% elsif booking.status =='pending'%>yellow-btn<% else%>red-btn<% end %>"><b><%= booking.status %></b></p>
                       <% unless booking.status == 'accepted' ||  booking.status == 'refused' %>
                       <%= link_to 'Accept', accepted_booking_path(booking), class: "btn, btn-primary", data: { turbo_method: :get, turbo_confirm: 'Are you sure?' } %>
                       <%= link_to 'Refuse', refused_booking_path(booking), class: "btn, btn-primary", data: { turbo_method: :get, turbo_confirm: 'Are you sure?' } %>
