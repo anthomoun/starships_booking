@@ -13,7 +13,7 @@
         <% end %>
       </div>
     </div>
-    <% if @starship.photos.nil? %>
+    <% if @starship.photos.count < 5 %>
       <div class='image'></div>
     <% else %>
       <% if @starship.photos.count == 5 %>
