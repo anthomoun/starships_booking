@@ -18,10 +18,8 @@
                   <div class="image">
                   </div>
                 <% else  %>
-                  <% starship.photos.each do |photo| %>
-                    <div class="dynamique-image" style="background-image: url('<%=cl_image_path photo.key %>')">
+                    <div class="dynamique-image" style="background-image: url('<%=cl_image_path starship.photos.first.key %>')">
                   </div>
-                  <% end %>
                 <% end %>
                   <div class="card-body p-3">
                     <%= starship.name %>
