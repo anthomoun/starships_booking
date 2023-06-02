@@ -57,5 +57,8 @@
         <%= render 'bookings/form', starship: @starship, booking: @booking %>
       </div>
     </div>
+    <div id="starship-map" data-controller="starship-map" data-starship-map-marker-value="<%= @marker.to_json %>" data-starship-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+
+    </div>
   </div>
 </div>
