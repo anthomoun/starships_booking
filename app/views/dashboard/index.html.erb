@@ -40,13 +40,12 @@
         <h2 id="My_bookings">My_bookings</h2>
           <% if @requests %>
                   <% @requests.each do |booking| %>
-                    <div>
-                      <p>Booking ID: <%= booking.id %></p>
+                    <div class="grid my-1 spaceships">
+                      <%= cl_image_tag booking.starship.photos.first.key, height: 220, width: 320, crop: :fill %>
+                      <p><%= booking.starship.name %></p>
                       <p>Status: <%= booking.status %></p>
                       <%= link_to 'Accept', accepted_booking_path(booking), class: "btn, btn-primary", data: { turbo_method: :get, turbo_confirm: 'Are you sure?' } %>
                       <%= link_to 'Refuse', refused_booking_path(booking), class: "btn, btn-primary", data: { turbo_method: :get, turbo_confirm: 'Are you sure?' } %>
-
-
                     </div>
                   <% end %>
           <% end %>
@@ -59,9 +58,12 @@
       <h2 id="My_requests">My requests</h2>
       <% if @bookings %>
         <% @bookings.each do |booking| %>
+              <div class="grid my-1 spaceships">
+                <%= cl_image_tag booking.starship.photos.first.key, height: 220, width: 320, crop: :fill %>
+                <p><%= booking.starship.name %></p>
+                <p>Status: <%= booking.status %></p>
+              </div>
           <div>
-            <p>Booking ID: <%= booking.id %></p>
-            <p>Status: <%= booking.status %></p>
 
           </div>
         <% end %>
