@@ -28,38 +28,38 @@ starships_serialized = URI.open(API_URL).read
 starships = JSON.parse(starships_serialized)['results']
 ADDRESSES = %w[paris london madrid mexico marseille]
 # Selection of photos to attach to attach to ships
-PHOTOS_EXTERIOR = ["http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/fy5fbbxk44dw9jvs77b6gxiafsf6",
-                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/2cw4uhatwwx1ue89ok83l2y18cd8",
-                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/ydu2cltge6o0adx84o02tjo23t44",
-                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/hxc9clyp73vwdn74r4fncnpx4kwd",
+PHOTOS_EXTERIOR = ["https://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/m4w7jmkndkf9a02oo603n8ngte1w",
+                   "https://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/cwiv05qhjvzd48c9d8h9yi64ukj5",
+                   "https://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/wxvs76jlekmnztkb07plf3e0wyjk",
+                   "https://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/r1zp2xfpl7swqfkn2y503q6ewoax",
+                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/9u78i21jvfg6c4z8lza2urut08fb",
                    "https://cdn.mos.cms.futurecdn.net/oC6z7QdfoejyiooPHTKynj.jpg",
                    "https://i.ytimg.com/vi/SkBRVEx6KRg/maxresdefault.jpg",
                    "https://i.ytimg.com/vi/9SCF-WCDkBw/maxresdefault.jpg",
                    "https://static.taigame.org/image/screenshot/201201/x3-albion-prelude-5.jpg",
                    "https://oceanof-games.com/games-images/full/x3-albion-prelude/x3-albion-prelude-game-free-download.jpg"]
 
-PHOTOS_INTERIOR = ["http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/ur6u5uz85fllxa5qkofupd0w34b5",
-                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/cj500az8bviu4b2ez70sk9g4ruad",
-                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/n8d5lykl4s1fd6f03fcbg2e6d3wh",
-                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/yb4902vbo0dewporpyxzaj9qal6q",
-                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/vbdemvo2o13b49ved9h7tcdasj4x",
-                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/dazib3a3vj8q3pyte9uqz8o5wfnf",
-                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/llv1sp6h9ndjpidh7akc75m8rl1l",
-                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/5oiphk37cvu9uc0run5i5sfcx8ib",
-                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/1m8bn7muv4hdi26t9idirqvtwxlq",
-                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/owhih6zgrlmn6e8nuicpk3p8ycj9",
-                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/x1gy924c96zbbps8ip1aaer37lzt",
-                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/yyv156m1sju2jmgmq6htln7xustj",
-                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/b5mqgjpq6anz2wjd5079k9w4wg6t",
-                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/c2nw54ud3373f1nj8vuw7sg34wi6",
-                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/1y0w7vsy2tb324tsmsk72h0d9ci3",
-                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/glvtzxsol3kpcr74r5wdn85h3ues"]
+PHOTOS_INTERIOR = ["https://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/cnzneqsobm0x40ahs1p3015q24fz",
+                   "https://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/wu1hvqwd53q77y6nw47v1967w1d2",
+                   "https://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/mry5es26ni6x3qnz0v7ryoehv0d8",
+                   "https://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/x9d1vgoyt03qadh9g3gh15xdrko3",
+                   "https://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/glh9xx8lsf8ovi9urdtywcbxef7p",
+                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/tucihtfwmlve2fgakpxvc6ya7afp",
+                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/8ubsdh0dh3d2whh9nuxsadnwq4hh",
+                   "https://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/r3wksjeyucqgwkq2vpejk153j5mw",
+                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/7t6glcver3zzn42g03tyb77qdnga",
+                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/9m8yp8zs1hch32olnhuk8o4zzj8h",
+                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/v48x3314p92dzl2jelfuexooya8c",
+                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/ofhwcsgjqgrrh0fga1j72kalw4ih",
+                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/9fr74s45mbusmmx0dn657pow8m7m",
+                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/slwzkftqk91htokeb62h1ky74ump",
+                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/o8mqacubshy94aawrqe9cmmumnwf"]
 
-PHOTOS_BEDROOM = ["http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/ipjnvtvmytsc0vk82hk2hpkrlw8p",
-                  "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/wpacj689cp0mxs46bjfy0zspbpb3",
-                  "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/r1noohgo6yh6xw4d1y7ctn48v6fc",
-                  "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/c2nw54ud3373f1nj8vuw7sg34wi6",
-                  "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/q9gcb9jdansh28vnwnhhcow8tjya"]
+PHOTOS_BEDROOM = ["http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/6kfnqkuy7qs9sxrsjehxy67v3l88",
+                  "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/c8o8ph9yx38yspwp33dkzwg6o0t4",
+                  "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/ivpmc48xpypxax1x9mijhuts5d7e",
+                  "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/hoiwzkc2xcww60kjbomp1fqh7uj9",
+                  "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/mckxxld462a5jrhgig7k38qz6g2x"]
 
 starships.each do |starship|
   # ONCE SESSIONS ARE IMPLEMENTED, FIX OWNER DESIGNATION
