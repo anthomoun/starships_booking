@@ -44,8 +44,10 @@
                       <%= cl_image_tag booking.starship.photos.first.key, height: 220, width: 320, crop: :fill %>
                       <p><%= booking.starship.name %></p>
                       <p>Status: <%= booking.status %></p>
+                      <% unless booking.status == 'accepted' ||  booking.status == 'refused' %>
                       <%= link_to 'Accept', accepted_booking_path(booking), class: "btn, btn-primary", data: { turbo_method: :get, turbo_confirm: 'Are you sure?' } %>
                       <%= link_to 'Refuse', refused_booking_path(booking), class: "btn, btn-primary", data: { turbo_method: :get, turbo_confirm: 'Are you sure?' } %>
+                      <% end %>
                     </div>
                   <% end %>
           <% end %>
