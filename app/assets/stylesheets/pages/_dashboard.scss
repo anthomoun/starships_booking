@@ -1,0 +1,65 @@
+h1 {
+  margin-top: 60px;
+}
+
+.btn-gradient {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #B09754;
+  transition: background 0.3s ease;
+  border: 1px solid #1E1D2C;
+}
+
+.btn-gradient:hover {
+  background: #1E1D2C;
+  color: white;
+}
+
+.dashboard_content {
+  min-height: 50vh;
+    background-color: #F4F4F4;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.button_dashboard {
+  border: 1px solid black !important;
+  border-radius: 31px !important;
+  color: black;
+  margin-right: 10px;
+  transition: background 0.3s ease;
+}
+
+.button_dashboard:hover {
+  background: #1E1D2C;
+  color: white;
+  border: 2px solid #B09754;
+
+}
+
+.remove_line {
+  border-bottom: none;
+}
+
+.spaceships {
+  // justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: black;
+  columns: 2;
+}
+
+a {
+  color: black;
+}
+
+.btn-primary {
+  border-radius: 30px;
+}
+
+.photo-plus-edit {
+  display: flex;
+  flex-direction: column;
+}

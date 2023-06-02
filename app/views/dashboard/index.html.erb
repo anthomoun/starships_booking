@@ -1,71 +1,72 @@
-<h1>Welcome to Your Dashboard, <%= current_user.first_name %>!</h1>
+<div class="container">
+
+  <h1>Welcome to Your Dashboard, <%= current_user.first_name %>!</h1>
 
 
-<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <ul class="nav nav-tabs remove_line my-5" id="myTab" role="tablist">
 
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active, btn btn-success" id="My_starships-tab" data-bs-toggle="tab" data-bs-target="#My_starships-tab-pane" type="button" role="tab" aria-controls="My_starships-tab-pane" aria-selected="true">My starships</button>
-    </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active button_dashboard" id="My_starships-tab" data-bs-toggle="tab" data-bs-target="#My_starships-tab-pane" type="button" role="tab" aria-controls="My_starships-tab-pane" aria-selected="true">My starships</button>
+      </li>
 
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="My_bookings-tab" data-bs-toggle="tab" data-bs-target="#My_bookings-tab-pane" type="button" role="tab" aria-controls="My_bookings-tab-pane" aria-selected="false">My bookings</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="My_requests-tab" data-bs-toggle="tab" data-bs-target="#My_requests-tab-pane" type="button" role="tab" aria-controls="My_requeststab-pane" aria-selected="false">My Requests</button>
-    </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link button_dashboard" id="My_bookings-tab" data-bs-toggle="tab" data-bs-target="#My_bookings-tab-pane" type="button" role="tab" aria-controls="My_bookings-tab-pane" aria-selected="false">My bookings</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link button_dashboard" id="My_requests-tab" data-bs-toggle="tab" data-bs-target="#My_requests-tab-pane" type="button" role="tab" aria-controls="My_requeststab-pane" aria-selected="false">My Requests</button>
+      </li>
 
-</ul>
+  </ul>
 
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="My_starships-tab-pane" role="tabpanel" aria-labelledby="My_starships-tab" tabindex="0">
-    <h2 id="My_starships"></h2>
-    <% if current_user.host? %>
-      <% @starships.each do |starship| %>
-        <div>
-          <p>Starship Name: <%= starship.name %></p>
-          <p>Starship Type: <%= starship.starship_type %></p>
-          <%#= link_to 'Edit Booking', edit_starship_booking_path(starship_id: @starship.id, id: booking.id), class: 'btn btn-primary' %>
-
-
-          <%= link_to 'Show', starship_path(starship) %>
-          <%= link_to 'Delete', starship_path(starship), method: :delete, data: { confirm: 'Are you sure?' } %>
-        </div>
-      <% end %>
-    <% end %>
-
-
-  </div>
-
-  <div class="tab-pane fade" id="My_bookings-tab-pane" role="tabpanel" aria-labelledby="My_bookings-tab" tabindex="0">
-      <h2 id="My_bookings">My_bookings</h2>
-        <% if @requests %>
-                <% @requests.each do |booking| %>
-                  <div>
-                    <p>Booking ID: <%= booking.id %></p>
-                    <p>Status: <%= booking.status %></p>
-                    <%= link_to 'Accept', accepted_booking_path(booking), class: "btn, btn-primary", data: { turbo_method: :get, turbo_confirm: 'Are you sure?' } %>
-                    <%= link_to 'Refuse', refused_booking_path(booking), class: "btn, btn-primary", data: { turbo_method: :get, turbo_confirm: 'Are you sure?' } %>
-
-
-                  </div>
-                <% end %>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade dashboard_content show active" id="My_starships-tab-pane" role="tabpanel" aria-labelledby="My_starships-tab" tabindex="0">
+      <h2 id="My_starships">My Starships</h2>
+  <% if current_user.host? %>
+          <% @starships.each do |starship| %>
+              <b><%= starship.name %></b>
+              <div class="grid my-1 spaceships">
+                <%= cl_image_tag starship.photos.first.key, height: 220, width: 320, crop: :fill %>
+                <%= link_to 'Edit', edit_starship_path(starship), class:"btn btn-primary btn-sm" %>
+                <%= link_to 'Show', starship_path(starship), class:"btn btn-primary" %>
+                <%= link_to 'Delete', starship_path(starship), class:"btn btn-primary", method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+          <% end %>
         <% end %>
+
+
     </div>
 
+    <div class="tab-pane fade dashboard_content" id="My_bookings-tab-pane" role="tabpanel" aria-labelledby="My_bookings-tab" tabindex="0">
+        <h2 id="My_bookings">My_bookings</h2>
+          <% if @requests %>
+                  <% @requests.each do |booking| %>
+                    <div>
+                      <p>Booking ID: <%= booking.id %></p>
+                      <p>Status: <%= booking.status %></p>
+                      <%= link_to 'Accept', accepted_booking_path(booking), class: "btn, btn-primary", data: { turbo_method: :get, turbo_confirm: 'Are you sure?' } %>
+                      <%= link_to 'Refuse', refused_booking_path(booking), class: "btn, btn-primary", data: { turbo_method: :get, turbo_confirm: 'Are you sure?' } %>
 
- </div>
 
-  <div class="tab-pane fade" id="My_requests-tab-pane" role="tabpanel" aria-labelledby="My_requests-tab" tabindex="0">
-    <h2 id="My_requests">My requests</h2>
-    <% if @bookings %>
-      <% @bookings.each do |booking| %>
-        <div>
-          <p>Booking ID: <%= booking.id %></p>
-          <p>Status: <%= booking.status %></p>
+                    </div>
+                  <% end %>
+          <% end %>
+      </div>
 
-        </div>
-      <% end %>
-    <% end %>
+
   </div>
 
+    <div class="tab-pane fade dashboard_content" id="My_requests-tab-pane" role="tabpanel" aria-labelledby="My_requests-tab" tabindex="0">
+      <h2 id="My_requests">My requests</h2>
+      <% if @bookings %>
+        <% @bookings.each do |booking| %>
+          <div>
+            <p>Booking ID: <%= booking.id %></p>
+            <p>Status: <%= booking.status %></p>
+
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
 </div>
