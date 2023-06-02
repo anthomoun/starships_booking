@@ -1,13 +1,23 @@
 body {
   background-color: $background;
   height: 100vh;
-  overflow: scroll;
+  // overflow: scroll;
+  padding-bottom: 20px;
+}
+
+.btn-back {
+  margin-top: 25px;
+}
+
+img {
+  border-radius: 10px;
 }
 
 .show-card {
-  background: radial-gradient(closest-side, #86694c, $background);
-  margin-top: 50px;
-  color: $intense-gold;
+  // background: radial-gradient(closest-side, #86694c, $background);
+  margin-top: 25px;
+  color: $not-quite-black;
+  margin-bottom: 30px;
 }
 
 .ship-name-owner {
@@ -21,8 +31,55 @@ body {
   margin: 0;
 }
 
-.description-billing {
+.description-and-billing {
   display: flex;
   justify-content: space-between;
-  margin-top: 15px;
+  margin-top: 25px;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+.ship-name-owner p {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.description-group {
+  font-size: 20px;
+}
+
+.description-heading {
+  font-weight: bold;
+  padding-bottom: 8px;
+  margin-bottom: 0;
+  border-bottom: solid 1px lightgray;
+}
+
+.description-content {
+  padding-top: 8px;
+}
+
+.booking-form-group {
+  padding: 15px;
+  border: solid 1px lightgray;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px lightgray;
+  flex-basis: 400px;
+}
+
+.booking-form-group h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.booking-form-group p, .booking-form-group label {
+  font-size: 20px;
+}
+
+i {
+  width: 25px;
+  text-align: center;
+  margin-right: 8px;
 }

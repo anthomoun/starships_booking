@@ -2,12 +2,17 @@ class StarshipsController < ApplicationController
   before_action :set_starship, only: %i[show edit update destroy]
 
   def index
-    @starships = Starship.all
+    @search = true
+    if params[:query].present?
+      @starships = Starship.where("address ILIKE ?", "%#{params[:query]}%")
+    else
+      @starships = Starship.all
+    end
     @markers = @starships.geocoded.map do |starship|
       {
         lat: starship.latitude,
         lng: starship.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {starship: starship}),
+        info_window_html: render_to_string(partial: "info_window", locals: { starship: starship }),
         marker_html: render_to_string(partial: "marker")
       }
     end
