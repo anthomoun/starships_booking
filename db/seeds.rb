@@ -31,7 +31,6 @@ ADDRESSES = %w[paris london madrid mexico marseille]
 PHOTOS_EXTERIOR = ["http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/fy5fbbxk44dw9jvs77b6gxiafsf6",
                    "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/2cw4uhatwwx1ue89ok83l2y18cd8",
                    "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/ydu2cltge6o0adx84o02tjo23t44",
-                   "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/vbjurgmce3c9t22fhualzb7a3xo1",
                    "http://res.cloudinary.com/dgfjq6es8/image/upload/v1/development/hxc9clyp73vwdn74r4fncnpx4kwd",
                    "https://cdn.mos.cms.futurecdn.net/oC6z7QdfoejyiooPHTKynj.jpg",
                    "https://i.ytimg.com/vi/SkBRVEx6KRg/maxresdefault.jpg",
