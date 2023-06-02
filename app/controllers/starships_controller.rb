@@ -20,6 +20,7 @@ class StarshipsController < ApplicationController
 
   def show
     @starship = Starship.find(params[:id])
+    @marker = [lat: @starship.latitude, lng: @starship.longitude]
     @booking = Booking.new
   end
 
