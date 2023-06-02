@@ -11,8 +11,6 @@ class BookingsController < ApplicationController
   def edit
     @booking = Booking.find(params[:id])
     @starship = Starship.find(params[:starship_id])
-    puts params.inspect
-    raise
   end
 
   def show
@@ -36,15 +34,7 @@ class BookingsController < ApplicationController
     end
   end
 
-  def update
-    @booking = Booking.find(params[:booking_id])
-    @booking.update(booking_params)
-    if @booking.update(booking_params)
-      redirect_to dashboard_path, notice: "Booking updated successfully!"
-    else
-      render :edit, status: :unprocessable_entity
-    end
-  end
+
 
   def destroy
     @booking = Booking.find(params[:id])
